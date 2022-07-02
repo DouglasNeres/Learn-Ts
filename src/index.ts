@@ -1,7 +1,6 @@
 //: number, string, boolean...
-
 let nome:string = "Developer"
-let age:number = 22
+let age:number = 17
 
 console.log(`nome: ${nome}, age: ${age}`);
 
@@ -31,3 +30,62 @@ console.log(myNums.length)
 console.log(nick.toUpperCase())
 
 // Tuplas:
+ let tuple: [number, string, string, boolean[]] 
+tuple = [5, "beleza", "legal", [false, true, false]]
+
+//Object Literals:
+
+const person: { nome:string, idade:number, apelido:string, character:boolean} = {
+    nome: "Dev",
+    idade: 18,
+    apelido: "Programador",
+    character: true
+}
+
+console.log(person)
+
+//Any:
+//Tipo aleatório, "dinâmico"
+let random:any = 0
+
+random = true
+random = false
+random = 777
+random = "Aleatório"  
+
+//Union Type:
+//Define que o tipo pode ser um ou outra coisa, ou outra coisa...
+let id :  string | boolean = true
+
+id = "adress"
+
+//Type Alias:
+type myType = number | boolean
+const type: myType = true
+const other: myType = 999
+
+//enum:
+//Tamanho de Roupas (Size: Médio, Size: Pequeno)
+enum Size{
+    P = "Pequeno",
+    M = "Médio",
+    G = "Grande"
+}
+
+const camisa = {
+    name: "Camisa gola V",
+    size: Size.G,
+}
+
+console.log(camisa)
+
+//Literal Types:
+//Valor literal para o Tipo
+
+let teste: "valorQualquer" | null
+//Outro valor não irá funcionar com o cód abaixo
+//teste = "outroValor"
+teste = "valorQualquer"
+teste = null
+
+//Funções;
