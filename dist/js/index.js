@@ -66,4 +66,36 @@ let teste;
 //teste = "outroValor"
 teste = "valorQualquer";
 teste = null;
-//Funções;
+//Funções:
+function multiplic(a, b) {
+    return a + b;
+}
+console.log(multiplic(333, 777));
+function speak(nome1, nome2) {
+    return `Olá ${nome1} ${nome2}, nome Bonitão`;
+}
+console.log(speak("Douglas", "Neres"));
+//Não retorna nada...
+function abc(msgn) {
+    console.log(msgn);
+}
+abc("Mensagem...");
+function greeting(name, greet) {
+    if (greet) {
+        console.log(`Hey ${greet} ${name}`);
+        return;
+    }
+    console.log(`Hey ${name}`);
+}
+greeting('Programmer');
+greeting('Developer', 'Senhor');
+function calc(numbers) {
+    return numbers.n1 ** numbers.n2;
+}
+console.log(calc({ n1: 9, n2: 2 }));
+const someNumbers = {
+    n1: 5,
+    n2: 3
+};
+console.log(calc(someNumbers));
+//Narrowing:

@@ -88,4 +88,54 @@ let teste: "valorQualquer" | null
 teste = "valorQualquer"
 teste = null
 
-//Funções;
+//Funções:
+function multiplic(a:number, b:number) {
+    return a + b
+}
+
+console.log(multiplic(333,777))
+
+function speak(nome1:string, nome2:string) : string {
+    return  `Olá ${nome1} ${nome2}, nome Bonitão`
+}
+
+console.log(speak("Douglas","Neres"))
+
+//Não retorna nada...
+function abc (msgn:string) : void {
+    console.log(msgn)
+}
+
+abc("Mensagem...")
+
+function greeting(name:string, greet?: string) {
+    if (greet) {
+        console.log(`Hey ${greet} ${name}`)
+        return
+    } 
+    console.log(`Hey ${name}`)
+}
+
+greeting('Programmer')
+greeting('Developer', 'Senhor')
+
+//Interfaces:
+interface MathFunction {
+    n1:number,
+    n2:number
+}
+
+function calc(numbers:MathFunction) {
+    return numbers.n1 ** numbers.n2
+}
+
+console.log(calc({n1:9, n2:2}))
+
+const someNumbers:MathFunction = {
+    n1: 5,
+    n2: 3
+}
+
+console.log(calc(someNumbers))
+
+//Narrowing:
