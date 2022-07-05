@@ -99,3 +99,60 @@ const someNumbers = {
 };
 console.log(calc(someNumbers));
 //Narrowing:
+//Checagem de tipos
+function something(info) {
+    if (typeof info === "number") {
+        console.log(`O número é ${info}`);
+        return;
+    }
+    console.log("Não foi passado um número");
+}
+something(7);
+something(true);
+//Generics 
+function showArrays(arr) {
+    arr.forEach((item) => {
+        console.log(`Item: ${item}`);
+    });
+}
+const a = [1, 0, 1, 0];
+const b = ['D', 'E', 'V'];
+showArrays(a);
+showArrays(b);
+//Classes 
+class user {
+    constructor(nome, idade, aprovado) {
+        this.nome = nome;
+        this.idade = idade;
+        this.aprovado = aprovado;
+    }
+    showName() {
+        console.log(`O nome do user é ${this.nome}`);
+    }
+    showAproveed() {
+        console.log(`Aprovação foi ${this.aprovado}`);
+    }
+    showAge(canShow) {
+        if (canShow) {
+            console.log(`Idade do User é: ${this.idade}`);
+            return;
+        }
+        console.log('Informação Restrita ou Não Encontrada!');
+    }
+}
+const usuario = new user("Robscleilton", 30, true);
+console.log(usuario);
+usuario.showName();
+usuario.showAproveed();
+usuario.showAge(true);
+class Car {
+    constructor(brand, wheels) {
+        this.brand = brand;
+        this.wheels = wheels;
+    }
+    showBrand() {
+        console.log(`A marca do carro é: ${this.brand}`);
+    }
+}
+const fuscao = new Car("Fiat", 4);
+fuscao.showBrand();

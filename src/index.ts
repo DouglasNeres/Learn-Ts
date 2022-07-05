@@ -139,3 +139,88 @@ const someNumbers:MathFunction = {
 console.log(calc(someNumbers))
 
 //Narrowing:
+//Checagem de tipos
+
+function something(info:number | boolean) {
+    if (typeof info === "number") {
+        console.log(`O número é ${info}`)
+        return
+    }
+    console.log("Não foi passado um número")
+}
+
+something(7)
+something(true)
+
+//Generics 
+
+function showArrays<T>(arr: T[]) {
+    arr.forEach((item) =>{
+        console.log(`Item: ${item}`)
+    })
+}
+
+const a = [1, 0, 1, 0]
+const b = ['D', 'E', 'V']
+showArrays(a)
+showArrays(b)
+
+//Classes 
+class user{
+    nome
+    idade
+    aprovado
+
+    constructor(nome: string, idade:number, aprovado: boolean) {
+  
+        this.nome = nome
+        this.idade = idade
+        this.aprovado = aprovado
+    }
+
+    showName(){
+        console.log(`O nome do user é ${this.nome}`)
+    }
+
+    showAproveed(){
+        console.log(`Aprovação foi ${this.aprovado}`)
+    }
+    
+    showAge(canShow: boolean){
+        if (canShow) {
+            console.log(`Idade do User é: ${this.idade}`)
+            return
+        }
+        console.log('Informação Restrita ou Não Encontrada!')
+    }
+}
+
+const usuario= new user("Robscleilton", 30, true)
+console.log(usuario)
+
+usuario.showName()
+usuario.showAproveed()
+usuario.showAge(true)
+
+//Interfaces em Classes:
+interface IVehicle {
+    brand: string
+    showBrand(): void
+}
+
+class Car implements IVehicle{
+    brand 
+    wheels
+
+    constructor (brand: string, wheels: number){
+        this.brand = brand
+        this.wheels = wheels
+    }
+
+    showBrand(): void {
+        console.log(`A marca do carro é: ${this.brand}`)
+    }
+}
+
+const fuscao = new Car ("Fiat", 4)
+fuscao.showBrand()
