@@ -1,0 +1,27 @@
+
+body{
+    color: azure;
+    background: url("/img/cssBackground.png");
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.quadrado{
+    border-radius: 5px;
+    box-shadow: 1px 2px 4px 9px gray;
+    border: 2px solid whitesmoke;
+    padding: 20px;
+    width: 500px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30vh;
+}
+
+h3{
+    color: rgb(207, 203, 203);
+
+}
