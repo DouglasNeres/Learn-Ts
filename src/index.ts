@@ -224,3 +224,38 @@ class Car implements IVehicle{
 
 const fuscao = new Car ("Fiat", 4)
 fuscao.showBrand()
+
+//Herança: 
+class SuperCar extends Car {
+        engine
+
+        constructor (brand: string, wheels: number, engine: number){
+            super(brand, wheels)
+            this.engine = engine
+        }
+}
+
+const a4 = new SuperCar('Audi', 9, 8)
+console.log(a4)
+a4.showBrand()
+
+//Decorators:
+function ParamtersBasic() {
+    return function <T extends {new (...args: any[]): {}} > (constructor: T){
+        return class extends constructor{
+        id = Math.random()
+        createdAt = new Date()
+    }
+}
+}
+
+@ParamtersBasic()
+class Person {
+    nic
+    constructor(nic: string) {
+        this.nic = nic
+    }
+}
+
+const sam = new Person('Sam')
+console.log(sam)

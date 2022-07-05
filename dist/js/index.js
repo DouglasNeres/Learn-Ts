@@ -1,4 +1,10 @@
 "use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 //: number, string, boolean...
 let nome = "Developer";
 let age = 17;
@@ -156,3 +162,35 @@ class Car {
 }
 const fuscao = new Car("Fiat", 4);
 fuscao.showBrand();
+//Herança: 
+class SuperCar extends Car {
+    constructor(brand, wheels, engine) {
+        super(brand, wheels);
+        this.engine = engine;
+    }
+}
+const a4 = new SuperCar('Audi', 9, 8);
+console.log(a4);
+a4.showBrand();
+//Decorators:
+function ParamtersBasic() {
+    return function (constructor) {
+        return class extends constructor {
+            constructor() {
+                super(...arguments);
+                this.id = Math.random();
+                this.createdAt = new Date();
+            }
+        };
+    };
+}
+let Person = class Person {
+    constructor(nic) {
+        this.nic = nic;
+    }
+};
+Person = __decorate([
+    ParamtersBasic()
+], Person);
+const sam = new Person('Sam');
+console.log(sam);
